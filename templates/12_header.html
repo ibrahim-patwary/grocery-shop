@@ -1,0 +1,87 @@
+{% load static %}
+
+<header class="header">
+
+    <a href="/" class="logo"> <i class="fas fa-shopping-basket"></i> Agro Grocery </a>
+
+    <nav class="navbar">
+        <a href="/">home</a>
+        <a href="{% url 'shop' %}">shop</a>
+        <a href="{% url 'about' %}">about</a>
+        <a href="{% url 'review' %}">review</a>
+        <a href="{% url 'blog' %}">blog</a>
+        <a href="{% url 'contact' %}">contact</a>
+
+        {% if user.is_authenticated %}
+        <div class=""><a href="/logout" id="login-btn" class=""> Logout </a></div>
+        {% else %}
+        <div class=""><a href="/Sing_up" id="login-btn" class=""> Login</a></div>
+        {% endif %}
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <!--- shoping cart --->
+
+
+
+        <style>
+            .cart-quantity {
+                position: absolute;
+            }
+        </style>
+
+        <div class="cart-btn">
+            <i id="cart" class="fas fa-shopping-cart">&nbsp;<span class="cart-quantity">0</span></i>
+        </div>
+
+        <!--  cart modal  -->
+        <div class="cart-modal-overlay">
+            <div class="cart-modal">
+                <i id="close-btn" class="fas fa-times"></i>
+                <h1 class="cart-is-empty">Cart is empty</h1>
+
+                <div class="product-rows">
+                </div>
+                <div class="total">
+                    <h1 class="cart-total">TOTAL</h1>
+                    <span class="total-price">$0</span>
+                    <button class="purchase-btn">PURCHASE</button>
+                </div>
+            </div>
+        </div>
+        <!--   end of cart modal -->
+
+
+
+
+
+        <!----------------------------------------- cart --------------------->
+        <div class="cart-modal-overlay">
+            <div class="cart-modal">
+                <i id="close-btn" class="fas fa-times"></i>
+                <h1 class="cart-is-empty">Cart is empty</h1>
+
+                <div class="product-rows">
+                </div>
+                <div class="total">
+                    <h1 class="cart-total">TOTAL</h1>
+                    <span class="total-price">$0</span>
+                    <button class="purchase-btn">PURCHASE</button>
+                </div>
+            </div>
+        </div>
+
+        {% include '13_shopping_cart.html' %}
+
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    
+
+
+</header>

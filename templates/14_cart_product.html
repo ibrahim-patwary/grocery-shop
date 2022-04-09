@@ -1,0 +1,18 @@
+{% load static %}
+<!--  products  -->
+<div class="items-container">
+
+    {% for allSHopItems in allSHopItems %}
+    <div class="card-1 card">
+        <div>
+            <img class="product-image" style="width: 100%; height:100%;" src="/media/{{ allSHopItems.itmIMG }}" alt="">
+        </div>
+        <button class="add-to-cart">Add to cart</button>
+        <hr>
+        <span class="product-price">${{allSHopItems.price}}</span>
+        <span class="product-price">{{allSHopItems.describe}}</span>
+    </div>
+    {% endfor %}
+
+</div>
+<!--  end of products  -->

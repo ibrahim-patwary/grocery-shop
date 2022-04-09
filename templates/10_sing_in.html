@@ -1,0 +1,35 @@
+<form action='/login' method="POST" class="sign-in-form" >
+    {% csrf_token %}
+    <h2 class="title">Sign in</h2>
+
+    <!--- user name --->
+    <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" name="loginUserName"/>
+    </div>
+
+    <!--- password --->
+    <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" name="Loginpass"/>
+    </div>
+
+    
+
+    <input type="submit" value="Login" class="btn solid" />
+    <p class="social-text">Or Sign in with social platforms</p>
+    <div class="social-media">
+        <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+</form>

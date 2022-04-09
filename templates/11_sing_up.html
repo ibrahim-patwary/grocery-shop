@@ -1,0 +1,51 @@
+
+
+<form action='/singup' method="POST" class="sign-up-form" enctype="multipart/form-data">
+    
+    {% csrf_token %}
+    <h2 class="title">Sign up</h2>
+
+    <!-- Username -->
+    <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" name="username"/>
+    </div>
+
+    <!-- mail-->
+    <div class="input-field">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="Email" name="email"/>
+    </div>
+
+    <!-- password -->
+    <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" name="pass1"/>
+    </div>
+
+    <!-- confirm password -->
+    <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" name="pass2"/>
+    </div>
+
+    <!-- sing up btn -->
+    <input type="submit" class="btn" value="Sign up" />
+
+
+    <p class="social-text">Or Sign up with social platforms</p>
+    <div class="social-media">
+        <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+</form>

@@ -1,0 +1,159 @@
+{% extends "0_base.html" %}
+{% load static %}
+
+
+
+{% block body %}
+
+<div class="heading">
+    <h1>client's review</h1>
+    <p> <a href="http://127.0.0.1:8000/">home >></a> review </p>
+</div>
+
+<section class="info-container">
+
+    <div class="info">
+        <img src="{% static 'image/icon-1.png' %}" alt="">
+        <div class="content">
+            <h3>fast delivery</h3>
+            <span>within 30 minutes</span>
+        </div>
+    </div>
+
+    <div class="info">
+        <img src="{% static 'image/icon-2.png' %}" alt="">
+        <div class="content">
+            <h3>24 / 7 available</h3>
+            <span>call us anytime</span>
+        </div>
+    </div>
+
+    <div class="info">
+        <img src="{% static 'image/icon-3.png' %}" alt="">
+        <div class="content">
+            <h3>easy payments</h3>
+            <span>cash or credits</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="review">
+
+    <div class="box">
+        <div class="user">
+            <img src="{% static 'image/ibu.jpg' %}" alt="">
+            <div class="info">
+                <h3>Ibrahim Patwary</h3>
+                <span>Owner</span>
+            </div>
+        </div>
+        <p>My absolute favorite store in Dhaka! Everyone is nice and friendly. Meat is non-hormone and grass fed. Seafood is fresh and local. Veggies are stack nicely.  Fruits are fresh.</p>
+    </div>
+
+    <div class="box">
+        <div class="user">
+            <img src="{% static 'image/fatema.jpg' %}" alt="">
+            <div class="info">
+                <h3>Fatima Rahman</h3>
+                <span>Happy client</span>
+            </div>
+        </div>
+        <p>My favorite grocery store in town. Their produce top notch vegetables and fresh foods!</p>
+    </div>
+
+    <div class="box">
+        <div class="user">
+            <img src="{% static 'image/anju.jpg' %}" alt="">
+            <div class="info">
+                <h3>Anjuma Rahman</h3>
+                <span>happy client</span>
+            </div>
+        </div>
+        <p>This is the best local independently owned health food store in Dhaka. They will have the best prices and you will be able to find the most unique hard to find items here as well. You will feel much better supporting a local company.</p>
+    </div>
+
+    <div class="box">
+        <div class="user">
+            <img src="{% static 'image/mahi_01.jpg' %}" alt="">
+            <div class="info">
+                <h3>Jannatul Mahi</h3>
+                <span>Happy client</span>
+            </div>
+        </div>
+        <p>Always the freshest produce and meats, locally sourced when available. The staff is very helpful, and knowledgeable about the items in stock. Great selection of organic foods and an amazing wellness department.</p>
+    </div>
+
+    <div class="box">
+        <div class="user">
+            <img src="{% static 'image/salma.jpg' %}" alt="">
+            <div class="info">
+                <h3>Umme Salma</h3>
+                <span>Happy client</span>
+            </div>
+        </div>
+        <p>Fantastic selection of vegetables, meals and the best part is they all are super fresh. I enjoy every visit.</p>
+    </div>
+
+
+
+</section>
+
+
+
+{% endblock %}
+
+{% block footer %}
+<section class="footer">
+
+    <div class="box-container" >
+  
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="home.html"> <i class="fas fa-arrow-right"></i> home</a>
+            <a href="shop.html"> <i class="fas fa-arrow-right"></i> shop</a>
+            <a href="about.html"> <i class="fas fa-arrow-right"></i> about</a>
+            <a href="review.html"> <i class="fas fa-arrow-right"></i> review</a>
+            <a href="blog.html"> <i class="fas fa-arrow-right"></i> blog</a>
+            <a href="contact.html"> <i class="fas fa-arrow-right"></i> contact</a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> my order </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> my favorite </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> my wishlist </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> my account </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> terms or use </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+        <div class="box" >
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+
+            {% if user.is_authenticated %}
+            <form action=""  method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="email" placeholder="enter your email" name="sub_email">
+                <input type="submit" value="subscribe" class="btn">
+            </form>
+
+            {% endif %}
+            <img src="{% static 'image/payment.png' %}" alt="">
+        </div>
+
+    </div>
+
+</section>
+{% endblock  %}
+
+
